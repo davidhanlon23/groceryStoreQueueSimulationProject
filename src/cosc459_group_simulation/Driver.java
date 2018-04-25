@@ -14,9 +14,9 @@ public class Driver {
 	public static void main( String [] args) {
 	
 		
+		Simulation sim1 = new Simulation();
 		
-		
-		
+		sim1.run();
 		
 	}// end of main
 
