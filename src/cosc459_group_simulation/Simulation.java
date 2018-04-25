@@ -6,6 +6,12 @@
  COSC 459 - 101
  Started: 04/15/2018
 --------------------------------------------------------*/
+/*
+ * Generate report
+ * should simulate 60 mins
+ * each iteration should be one minute
+ * */
+
 package cosc459_group_simulation;
 import java.util.PriorityQueue;
 import java.util.Random;
@@ -13,6 +19,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+@SuppressWarnings("unused")
 
 public class Simulation {
 
@@ -25,6 +32,19 @@ private DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd - hh:mm:ss a");
 private ArrayList<String> timeStamp = new ArrayList<String>(); //store timestamps
 
 private int totalCustomers; //# of customers served during simulation
+//=======================================
+private int arrivalRate = 0;
+private int serviceRateOfOneServer = 0;
+private int serverUtilization = 0;
+private int interarrivalTime = 0;
+private int serviceTime = 0;
+private int numCustomersInSystem =0;//at time t
+private int numCustomersInQueue = 0;//at time t
+
+private long lrtaNumCustomersSystem = 0; //Long runtime avg number of customers in system
+private long lrtaNumCustomersQueue = 0; //long runtime avg number of customers in queue
+private long avgTimeSpent = 0;//long run avg time spent in system per customer
+//===========================================
 
 private long startTime = System.nanoTime(); //time of initial build
 private long simulationTime = 1; //desired time in minutes
@@ -112,7 +132,11 @@ private void assignTimestamp(int ID){
     System.out.println(timeStamp.get(totalCustomers-1));
 } //assignArrivalTime()
 
-
+//========================================
+private void generateReport() {
+	
+}
+//========================================
 private int generateWaitTime(){
     //Local variables
     int Low = 1000;  //1000ms
